@@ -756,5 +756,7 @@ export default buildConfig({
   cors: [
     'http://localhost:3000',
     'http://localhost:3001',
+    'miro-drab.vercel.app', 
+  'https://miro-drab.vercel.app',
   ],
 })
