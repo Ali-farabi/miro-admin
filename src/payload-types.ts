@@ -68,7 +68,25 @@ export interface Config {
   blocks: {};
   collections: {
     users: User;
+    hero: Hero;
+    'features-section': FeaturesSection;
+    'work-together-section': WorkTogetherSection;
+    'integrations-section': IntegrationsSection;
+    'ways-we-work-section': WaysWeWorkSection;
+    'built-for-work-section': BuiltForWorkSection;
+    'trusted-section': TrustedSection;
+    'work-categories': WorkCategory;
+    features: Feature;
+    testimonials: Testimonial;
+    'trusted-companies': TrustedCompany;
+    integrations: Integration;
+    settings: Setting;
     media: Media;
+    'built-for-teams-section': BuiltForTeamsSection;
+    'team-categories': TeamCategory;
+    'why-trust-section': WhyTrustSection;
+    'trust-stats': TrustStat;
+    'testimonials-section': TestimonialsSection;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -77,7 +95,25 @@ export interface Config {
   collectionsJoins: {};
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
+    hero: HeroSelect<false> | HeroSelect<true>;
+    'features-section': FeaturesSectionSelect<false> | FeaturesSectionSelect<true>;
+    'work-together-section': WorkTogetherSectionSelect<false> | WorkTogetherSectionSelect<true>;
+    'integrations-section': IntegrationsSectionSelect<false> | IntegrationsSectionSelect<true>;
+    'ways-we-work-section': WaysWeWorkSectionSelect<false> | WaysWeWorkSectionSelect<true>;
+    'built-for-work-section': BuiltForWorkSectionSelect<false> | BuiltForWorkSectionSelect<true>;
+    'trusted-section': TrustedSectionSelect<false> | TrustedSectionSelect<true>;
+    'work-categories': WorkCategoriesSelect<false> | WorkCategoriesSelect<true>;
+    features: FeaturesSelect<false> | FeaturesSelect<true>;
+    testimonials: TestimonialsSelect<false> | TestimonialsSelect<true>;
+    'trusted-companies': TrustedCompaniesSelect<false> | TrustedCompaniesSelect<true>;
+    integrations: IntegrationsSelect<false> | IntegrationsSelect<true>;
+    settings: SettingsSelect<false> | SettingsSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
+    'built-for-teams-section': BuiltForTeamsSectionSelect<false> | BuiltForTeamsSectionSelect<true>;
+    'team-categories': TeamCategoriesSelect<false> | TeamCategoriesSelect<true>;
+    'why-trust-section': WhyTrustSectionSelect<false> | WhyTrustSectionSelect<true>;
+    'trust-stats': TrustStatsSelect<false> | TrustStatsSelect<true>;
+    'testimonials-section': TestimonialsSectionSelect<false> | TestimonialsSectionSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -122,6 +158,7 @@ export interface UserAuthOperations {
  */
 export interface User {
   id: string;
+  name: string;
   updatedAt: string;
   createdAt: string;
   email: string;
@@ -142,6 +179,22 @@ export interface User {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "hero".
+ */
+export interface Hero {
+  id: string;
+  title: string;
+  subtitle: string;
+  emailPlaceholder?: string | null;
+  ctaText?: string | null;
+  ctaLink?: string | null;
+  helperText?: string | null;
+  heroImage?: (string | null) | Media;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "media".
  */
 export interface Media {
@@ -158,6 +211,265 @@ export interface Media {
   height?: number | null;
   focalX?: number | null;
   focalY?: number | null;
+  sizes?: {
+    thumbnail?: {
+      url?: string | null;
+      width?: number | null;
+      height?: number | null;
+      mimeType?: string | null;
+      filesize?: number | null;
+      filename?: string | null;
+    };
+    card?: {
+      url?: string | null;
+      width?: number | null;
+      height?: number | null;
+      mimeType?: string | null;
+      filesize?: number | null;
+      filename?: string | null;
+    };
+    large?: {
+      url?: string | null;
+      width?: number | null;
+      height?: number | null;
+      mimeType?: string | null;
+      filesize?: number | null;
+      filename?: string | null;
+    };
+  };
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "features-section".
+ */
+export interface FeaturesSection {
+  id: string;
+  badge?: string | null;
+  title: string;
+  ctaText?: string | null;
+  ctaLink?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "work-together-section".
+ */
+export interface WorkTogetherSection {
+  id: string;
+  title: string;
+  description: string;
+  linkText?: string | null;
+  linkUrl?: string | null;
+  image: string | Media;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "integrations-section".
+ */
+export interface IntegrationsSection {
+  id: string;
+  title: string;
+  description: string;
+  linkText?: string | null;
+  linkUrl?: string | null;
+  image: string | Media;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ways-we-work-section".
+ */
+export interface WaysWeWorkSection {
+  id: string;
+  backgroundImage: string | Media;
+  subtitle?: string | null;
+  mainTitle: string;
+  description?: string | null;
+  buttonText?: string | null;
+  buttonUrl?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "built-for-work-section".
+ */
+export interface BuiltForWorkSection {
+  id: string;
+  title: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "trusted-section".
+ */
+export interface TrustedSection {
+  id: string;
+  text: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "work-categories".
+ */
+export interface WorkCategory {
+  id: string;
+  name: string;
+  title: string;
+  description: string;
+  image: string | Media;
+  linkText?: string | null;
+  linkUrl?: string | null;
+  order?: number | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "features".
+ */
+export interface Feature {
+  id: string;
+  title: string;
+  description: string;
+  link?: string | null;
+  linkText?: string | null;
+  order?: number | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "testimonials".
+ */
+export interface Testimonial {
+  id: string;
+  company: string;
+  quote: string;
+  authorName: string;
+  authorRole: string;
+  authorCompany: string;
+  authorImage?: (string | null) | Media;
+  companyLogo?: (string | null) | Media;
+  order?: number | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "trusted-companies".
+ */
+export interface TrustedCompany {
+  id: string;
+  name: string;
+  logo: string | Media;
+  order?: number | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "integrations".
+ */
+export interface Integration {
+  id: string;
+  name: string;
+  description?: string | null;
+  logo: string | Media;
+  category?: ('communication' | 'development' | 'productivity' | 'design') | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "settings".
+ */
+export interface Setting {
+  id: string;
+  siteName?: string | null;
+  siteDescription?: string | null;
+  logo?: (string | null) | Media;
+  contactEmail?: string | null;
+  socialLinks?: {
+    twitter?: string | null;
+    linkedin?: string | null;
+    facebook?: string | null;
+  };
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "built-for-teams-section".
+ */
+export interface BuiltForTeamsSection {
+  id: string;
+  title: string;
+  integrationsText?: string | null;
+  integrationsImage?: (string | null) | Media;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "team-categories".
+ */
+export interface TeamCategory {
+  id: string;
+  name: string;
+  features: {
+    text: string;
+    id?: string | null;
+  }[];
+  linkText?: string | null;
+  linkUrl?: string | null;
+  image: string | Media;
+  order?: number | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "why-trust-section".
+ */
+export interface WhyTrustSection {
+  id: string;
+  title: string;
+  ctaText?: string | null;
+  ctaLink?: string | null;
+  backgroundColor?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "trust-stats".
+ */
+export interface TrustStat {
+  id: string;
+  title: string;
+  subtitle: string;
+  order?: number | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "testimonials-section".
+ */
+export interface TestimonialsSection {
+  id: string;
+  title: string;
+  ctaText?: string | null;
+  ctaLink?: string | null;
+  updatedAt: string;
+  createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -188,8 +500,80 @@ export interface PayloadLockedDocument {
         value: string | User;
       } | null)
     | ({
+        relationTo: 'hero';
+        value: string | Hero;
+      } | null)
+    | ({
+        relationTo: 'features-section';
+        value: string | FeaturesSection;
+      } | null)
+    | ({
+        relationTo: 'work-together-section';
+        value: string | WorkTogetherSection;
+      } | null)
+    | ({
+        relationTo: 'integrations-section';
+        value: string | IntegrationsSection;
+      } | null)
+    | ({
+        relationTo: 'ways-we-work-section';
+        value: string | WaysWeWorkSection;
+      } | null)
+    | ({
+        relationTo: 'built-for-work-section';
+        value: string | BuiltForWorkSection;
+      } | null)
+    | ({
+        relationTo: 'trusted-section';
+        value: string | TrustedSection;
+      } | null)
+    | ({
+        relationTo: 'work-categories';
+        value: string | WorkCategory;
+      } | null)
+    | ({
+        relationTo: 'features';
+        value: string | Feature;
+      } | null)
+    | ({
+        relationTo: 'testimonials';
+        value: string | Testimonial;
+      } | null)
+    | ({
+        relationTo: 'trusted-companies';
+        value: string | TrustedCompany;
+      } | null)
+    | ({
+        relationTo: 'integrations';
+        value: string | Integration;
+      } | null)
+    | ({
+        relationTo: 'settings';
+        value: string | Setting;
+      } | null)
+    | ({
         relationTo: 'media';
         value: string | Media;
+      } | null)
+    | ({
+        relationTo: 'built-for-teams-section';
+        value: string | BuiltForTeamsSection;
+      } | null)
+    | ({
+        relationTo: 'team-categories';
+        value: string | TeamCategory;
+      } | null)
+    | ({
+        relationTo: 'why-trust-section';
+        value: string | WhyTrustSection;
+      } | null)
+    | ({
+        relationTo: 'trust-stats';
+        value: string | TrustStat;
+      } | null)
+    | ({
+        relationTo: 'testimonials-section';
+        value: string | TestimonialsSection;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -238,6 +622,7 @@ export interface PayloadMigration {
  * via the `definition` "users_select".
  */
 export interface UsersSelect<T extends boolean = true> {
+  name?: T;
   updatedAt?: T;
   createdAt?: T;
   email?: T;
@@ -257,6 +642,177 @@ export interface UsersSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "hero_select".
+ */
+export interface HeroSelect<T extends boolean = true> {
+  title?: T;
+  subtitle?: T;
+  emailPlaceholder?: T;
+  ctaText?: T;
+  ctaLink?: T;
+  helperText?: T;
+  heroImage?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "features-section_select".
+ */
+export interface FeaturesSectionSelect<T extends boolean = true> {
+  badge?: T;
+  title?: T;
+  ctaText?: T;
+  ctaLink?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "work-together-section_select".
+ */
+export interface WorkTogetherSectionSelect<T extends boolean = true> {
+  title?: T;
+  description?: T;
+  linkText?: T;
+  linkUrl?: T;
+  image?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "integrations-section_select".
+ */
+export interface IntegrationsSectionSelect<T extends boolean = true> {
+  title?: T;
+  description?: T;
+  linkText?: T;
+  linkUrl?: T;
+  image?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ways-we-work-section_select".
+ */
+export interface WaysWeWorkSectionSelect<T extends boolean = true> {
+  backgroundImage?: T;
+  subtitle?: T;
+  mainTitle?: T;
+  description?: T;
+  buttonText?: T;
+  buttonUrl?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "built-for-work-section_select".
+ */
+export interface BuiltForWorkSectionSelect<T extends boolean = true> {
+  title?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "trusted-section_select".
+ */
+export interface TrustedSectionSelect<T extends boolean = true> {
+  text?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "work-categories_select".
+ */
+export interface WorkCategoriesSelect<T extends boolean = true> {
+  name?: T;
+  title?: T;
+  description?: T;
+  image?: T;
+  linkText?: T;
+  linkUrl?: T;
+  order?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "features_select".
+ */
+export interface FeaturesSelect<T extends boolean = true> {
+  title?: T;
+  description?: T;
+  link?: T;
+  linkText?: T;
+  order?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "testimonials_select".
+ */
+export interface TestimonialsSelect<T extends boolean = true> {
+  company?: T;
+  quote?: T;
+  authorName?: T;
+  authorRole?: T;
+  authorCompany?: T;
+  authorImage?: T;
+  companyLogo?: T;
+  order?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "trusted-companies_select".
+ */
+export interface TrustedCompaniesSelect<T extends boolean = true> {
+  name?: T;
+  logo?: T;
+  order?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "integrations_select".
+ */
+export interface IntegrationsSelect<T extends boolean = true> {
+  name?: T;
+  description?: T;
+  logo?: T;
+  category?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "settings_select".
+ */
+export interface SettingsSelect<T extends boolean = true> {
+  siteName?: T;
+  siteDescription?: T;
+  logo?: T;
+  contactEmail?: T;
+  socialLinks?:
+    | T
+    | {
+        twitter?: T;
+        linkedin?: T;
+        facebook?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "media_select".
  */
 export interface MediaSelect<T extends boolean = true> {
@@ -272,6 +828,104 @@ export interface MediaSelect<T extends boolean = true> {
   height?: T;
   focalX?: T;
   focalY?: T;
+  sizes?:
+    | T
+    | {
+        thumbnail?:
+          | T
+          | {
+              url?: T;
+              width?: T;
+              height?: T;
+              mimeType?: T;
+              filesize?: T;
+              filename?: T;
+            };
+        card?:
+          | T
+          | {
+              url?: T;
+              width?: T;
+              height?: T;
+              mimeType?: T;
+              filesize?: T;
+              filename?: T;
+            };
+        large?:
+          | T
+          | {
+              url?: T;
+              width?: T;
+              height?: T;
+              mimeType?: T;
+              filesize?: T;
+              filename?: T;
+            };
+      };
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "built-for-teams-section_select".
+ */
+export interface BuiltForTeamsSectionSelect<T extends boolean = true> {
+  title?: T;
+  integrationsText?: T;
+  integrationsImage?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "team-categories_select".
+ */
+export interface TeamCategoriesSelect<T extends boolean = true> {
+  name?: T;
+  features?:
+    | T
+    | {
+        text?: T;
+        id?: T;
+      };
+  linkText?: T;
+  linkUrl?: T;
+  image?: T;
+  order?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "why-trust-section_select".
+ */
+export interface WhyTrustSectionSelect<T extends boolean = true> {
+  title?: T;
+  ctaText?: T;
+  ctaLink?: T;
+  backgroundColor?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "trust-stats_select".
+ */
+export interface TrustStatsSelect<T extends boolean = true> {
+  title?: T;
+  subtitle?: T;
+  order?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "testimonials-section_select".
+ */
+export interface TestimonialsSectionSelect<T extends boolean = true> {
+  title?: T;
+  ctaText?: T;
+  ctaLink?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
