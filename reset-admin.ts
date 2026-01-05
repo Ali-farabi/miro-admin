@@ -5,7 +5,7 @@ config()
 
 async function resetAdmin() {
   try {
-    const { default: payloadConfig } = await import('./src/payload.config-full.js')
+    const { default: payloadConfig } = await import('./src/payload.config.js')
     
     const payload = await getPayload({ config: payloadConfig })
     
