@@ -15,7 +15,6 @@ export default buildConfig({
   },
   
   collections: [
-    // Пользователи
     {
       slug: 'users',
       auth: true,
@@ -28,7 +27,6 @@ export default buildConfig({
       ],
     },
     
-    // Hero секция
     {
       slug: 'hero',
       admin: {
@@ -78,7 +76,6 @@ export default buildConfig({
       ],
     },
     
-    // Features Section (главная секция)
     {
       slug: 'features-section',
       admin: {
@@ -112,7 +109,6 @@ export default buildConfig({
       ],
     },
 
-    // Work Together Section
     {
       slug: 'work-together-section',
       admin: {
@@ -153,7 +149,6 @@ export default buildConfig({
       ],
     },
 
-    // Integrations Section
     {
       slug: 'integrations-section',
       admin: {
@@ -194,7 +189,6 @@ export default buildConfig({
       ],
     },
 
-    // The Ways We Work Section
     {
       slug: 'ways-we-work-section',
       admin: {
@@ -239,7 +233,6 @@ export default buildConfig({
       ],
     },
 
-    // Built For Work Section
     {
       slug: 'built-for-work-section',
       admin: {
@@ -258,7 +251,6 @@ export default buildConfig({
       ],
     },
 
-    // Trusted Section
     {
       slug: 'trusted-section',
       admin: {
@@ -277,7 +269,6 @@ export default buildConfig({
       ],
     },
 
-    // Work Categories (табы для Built For Work Section)
     {
       slug: 'work-categories',
       admin: {
@@ -326,7 +317,6 @@ export default buildConfig({
       ],
     },
 
-    // Features (отдельные фичи)
     {
       slug: 'features',
       admin: {
@@ -362,7 +352,6 @@ export default buildConfig({
       ],
     },
     
-    // Testimonials
     {
       slug: 'testimonials',
       admin: {
@@ -415,7 +404,6 @@ export default buildConfig({
       ],
     },
     
-    // Trusted By (компании)
     {
       slug: 'trusted-companies',
       admin: {
@@ -444,7 +432,6 @@ export default buildConfig({
       ],
     },
     
-    // Integrations
     {
       slug: 'integrations',
       admin: {
@@ -482,7 +469,6 @@ export default buildConfig({
       ],
     },
     
-    // Settings (глобальные настройки)
     {
       slug: 'settings',
       admin: {
@@ -531,7 +517,6 @@ export default buildConfig({
       ],
     },
     
-    // Медиа файлы
     {
       slug: 'media',
       upload: {
@@ -598,7 +583,6 @@ export default buildConfig({
       ],
     },
 
-    // Team Categories (табы для Built For Teams Section)
     {
       slug: 'team-categories',
       admin: {
@@ -648,9 +632,7 @@ export default buildConfig({
         },
       ],
     },
-    // Добавьте эти коллекции в ваш payload.config.ts после 'team-categories':
 
-    // Why Trust Miro Section
     {
       slug: 'why-trust-section',
       admin: {
@@ -684,7 +666,6 @@ export default buildConfig({
       ],
     },
 
-    // Trust Stats
     {
       slug: 'trust-stats',
       admin: {
