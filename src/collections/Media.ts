@@ -4,8 +4,6 @@ export const Media: CollectionConfig = {
   slug: 'media',
   upload: {
     mimeTypes: ['image/*'],
-    
-    disableLocalStorage: true,
     imageSizes: [
       {
         name: 'thumbnail',

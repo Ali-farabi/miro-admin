@@ -93,10 +93,7 @@ export default buildConfig({
       enabled: true,
       token: process.env.BLOB_READ_WRITE_TOKEN || '',
       collections: {
-        media: {
-          disableLocalStorage: true, 
-          prefix: 'media', 
-        },
+        media: true,
       },
     }),
   ],
