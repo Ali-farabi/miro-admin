@@ -1,5 +1,3 @@
-// src/payload.config.ts
-// ФИНАЛЬНАЯ ВЕРСИЯ - без ошибок TypeScript
 import { buildConfig } from 'payload'
 import { mongooseAdapter } from '@payloadcms/db-mongodb'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
@@ -96,8 +94,9 @@ export default buildConfig({
       token: process.env.BLOB_READ_WRITE_TOKEN || '',
       collections: {
         media: {
-          disableLocalStorage: true,
-        }
+          disableLocalStorage: true, 
+          prefix: 'media', 
+        },
       },
     }),
   ],

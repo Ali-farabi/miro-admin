@@ -3,9 +3,9 @@ import { CollectionConfig } from 'payload'
 export const Media: CollectionConfig = {
   slug: 'media',
   upload: {
-    
     mimeTypes: ['image/*'],
-     disableLocalStorage: true,
+    
+    disableLocalStorage: true,
     imageSizes: [
       {
         name: 'thumbnail',
