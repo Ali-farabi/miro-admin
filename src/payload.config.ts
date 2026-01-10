@@ -5,7 +5,6 @@ import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
 import path from 'path'
 import { fileURLToPath } from 'url'
 
-
 import {
   Users,
   Media,
@@ -33,7 +32,7 @@ const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
 export default buildConfig({
-  serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL,
+  serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL || 'https://miro-project-production.up.railway.app',
   
   admin: {
     user: 'users',
@@ -77,17 +76,26 @@ export default buildConfig({
   cors: [
     'http://localhost:3000',
     'http://localhost:3001',
+    'https://miro-project-production.up.railway.app',
+    'https://miro-drab.vercel.app',
     'miro-drab.vercel.app',
+  ],
+  
+  csrf: [
+    'http://localhost:3000',
+    'http://localhost:3001',
+    'https://miro-project-production.up.railway.app',
     'https://miro-drab.vercel.app',
   ],
   
   plugins: [
     vercelBlobStorage({
       enabled: true,
-      token: process.env.BLOB_READ_WRITE_TOKEN,
+      token: process.env.BLOB_READ_WRITE_TOKEN || '',
       collections: {
         media: true,
       },
+      addRandomSuffix: true, 
     }),
   ],
 })
