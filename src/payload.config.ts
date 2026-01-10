@@ -1,3 +1,5 @@
+// src/payload.config.ts
+// ФИНАЛЬНАЯ ВЕРСИЯ - без ошибок TypeScript
 import { buildConfig } from 'payload'
 import { mongooseAdapter } from '@payloadcms/db-mongodb'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
@@ -78,7 +80,7 @@ export default buildConfig({
     'http://localhost:3001',
     'https://miro-project-production.up.railway.app',
     'https://miro-drab.vercel.app',
-    'miro-drab.vercel.app',
+    'https://*.vercel-storage.com',
   ],
   
   csrf: [
@@ -91,7 +93,7 @@ export default buildConfig({
   plugins: [
     vercelBlobStorage({
       enabled: true,
-      token: process.env.BLOB_READ_WRITE_TOKEN!,
+      token: process.env.BLOB_READ_WRITE_TOKEN || '',
       collections: {
         media: true,
       },
